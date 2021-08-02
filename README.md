@@ -27,19 +27,19 @@ start by opening a terminal in catkin_ws/src folder, then to create a package fo
 catkin_create_pkg multi_robot rospy gazebo_ros
 ```
 
-![]()
+![CreatePackage](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/01-creatr%20package.PNG)
 
 
 now create a folder called launch under the multi_robot package we just created, we will create 3 launch files in this folder.
 
 
-![]()
+![launchFolder](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/02-create%20folder%20named%20launch.PNG)
 
 
 in launch folder create the 3 launch files we need which are *one_robot.launch, robots.launch,* and *main.launch* using `touch ` command followed by the name of the file.
 
 
-![]()
+![launchFiles](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/03-create%20launch%20files.PNG)
 
 
 *one_robot.launch* is the file that will launch one robot in the simulation, which will contain the following script: 
@@ -62,7 +62,7 @@ in launch folder create the 3 launch files we need which are *one_robot.launch, 
 </launch>
 ```
 
-<img src="" width="400">
+<img src="https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/04-one_robot.launch.PNG" width="600">
 
 
 *robots.launch* which will open multiple robots. Note that you can operate more robots but make sure that the namespaces and tf_prefixes are different and the initial position for each robot is also different so that they will not overlap each other. this launch file will contain the following script:
@@ -96,13 +96,13 @@ in launch folder create the 3 launch files we need which are *one_robot.launch, 
 ```
 
 
-<img src="" width="400">
+<img src="https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/05-robots.launch.PNG" width="600">
 
 
 *main.launch* file is to launch the gazebo world simulation, you can choose any environment in worlds folder that is provided with TurtleBot3 robot.
 
 
-![environments]()
+![environments](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/07-worlds.PNG)
 
 
 ```bash 
@@ -122,7 +122,7 @@ in launch folder create the 3 launch files we need which are *one_robot.launch, 
 ```
 
 
-<img src="" width="400">
+<img src="https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/06-main.launch.PNG" width="600">
 
 
 to launch the simulation with the two robot use the following command
@@ -132,8 +132,12 @@ to launch the simulation with the two robot use the following command
 roslaunch multi_robot main.launch
 ```
 
-![]()
-*Note: this this picture we use *empty.world* environment*
+![simulatedInEmpty](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/08-two%20robot%20are%20simulated%20in%20empty.PNG)
+*Note: in this picture we use empty.world environment*
+
+
+![turtlebot3_world](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/09-two%20robot%20are%20simulated%20in%20gazebo%20env.PNG)
+*with turtlebot3_world.world file*
 
 
 ## Move and control the robots using teleop key in Gazebo environment
@@ -142,7 +146,7 @@ roslaunch multi_robot main.launch
 in new terminal check the topics using `rostopic list`then you will see 2 cmd_vel topics for each robots.
 
 
-![]()
+![rostopict](https://github.com/AlolyanRoaa/launch-multiple-robots-inGazebo/blob/main/images/10-rostopit%20list%20command.PNG)
 
 
 to control them using teleop_twist, run the command below in a new terminal.
@@ -157,6 +161,8 @@ Note that if you want to control a different robot all you need is to remap cmd_
 
 ## Demo
 
+
+https://user-images.githubusercontent.com/85321139/127918971-5e0fabda-5226-41cd-9419-b79be3ba0224.mp4
 
 
 ## Resources
